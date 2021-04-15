@@ -1,0 +1,2 @@
+recursive-include code_server_hub/templates *
+recursive-include code_server_hub/static *

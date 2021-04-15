@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>code-server login</title>
+
+    <link rel="icon" href="{{ relative_static_url('icon/favicon-dark-support.svg') }}" />
+    <link rel="alternate icon" href="{{ relative_static_url('icon/favicon.ico') }}" />
+    
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ relative_static_url('icon/pwa-icon-192.png') }}" />
+    <link rel="apple-touch-icon" sizes="512x512" href="{{ relative_static_url('icon/pwa-icon-512.png') }}" />
+
+    <link rel="stylesheet" href="{{ relative_static_url('css/global.css') }}">
+    <link rel="stylesheet" href="{{ relative_static_url('css/login.css') }}">
+    <link rel="stylesheet" href="{{ relative_static_url('css/register.css') }}">
+</head>
+
+<body>
+    <div class="center-container">
+        <div class="card-box">
+            <div class="header">
+                <h1 class="main">Welcome to code-server</h1>
+            </div>
+            <div class="content">
+                <form class="login-form" method="post">
+                    <div class="field">
+                        <input required="" autofocus="" class="username" type="text" placeholder="USERNAME"
+                            name="username" autocomplete="username">
+                        <input required="" autofocus="" class="password" type="password" placeholder="PASSWORD"
+                            name="password" autocomplete="current-password">
+                        <input class="submit -button" value="SUBMIT" type="submit">
+                    </div>
+{% try %}
+{% if login_fail %}
+<div class="error">Invalid username or password</div>
+{%end%}
+{% except %}
+{% end %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
