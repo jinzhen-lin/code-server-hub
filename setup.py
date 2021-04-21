@@ -10,11 +10,13 @@ setup(
     author_email="linjinzhen@hotmail.com",
     url="https://github.com/jinzhen-lin/code_server_hub",
     license="BSD",
+    platforms="Linux, Mac OS X",
     python_requires=">=3.6",
     install_requires=[
         "tornado>=5.1",
         "jupyterhub>=1.0.0",
         "simplepam>=0.1.5",
+        "configargparse>=0.10.0"
     ],
     packages=["code_server_hub"],
     entry_points={
